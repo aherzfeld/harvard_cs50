@@ -18,6 +18,6 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         printf(' ' * (n - 2 - i));
-        printf('#' * (2 + i) + '/n');
+        printf('#' * (2 + i) + '\n');
     }
 }
