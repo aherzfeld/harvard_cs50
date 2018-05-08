@@ -8,19 +8,16 @@ int main(void)
     int n;
     do
     {
-        n = get_int("Number: ");
+        n = get_int("Height: ");
     }
     while (n < 0 || n > 23);
-    //print out the height of the pyramid
-    {
-        printf("Height: %i\n", n);
-    }
     //print out pyramid with height n
     //number of rows
     int i, j, k;
     for (i = 0; i < n; i++)
     {
-        for (j = 0; j < (n - 2 - i); j++)
+        //filling out the rows 
+        for (j = 0; j <= (n - 2 - i); j++)
         {
             printf(" ");
         }
