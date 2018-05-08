@@ -16,15 +16,15 @@ int main(void)
     int i, j, k;
     for (i = 0; i < n; i++)
     {
-        //filling out the rows 
+        //filling out the rows
         for (j = 0; j <= (n - 2 - i); j++)
         {
             printf(" ");
         }
         for (k = 0; k < (2 + i); k++)
-        { 
+        {
             printf("#");
-        }    
+        }
         printf("\n");
     }
 }
