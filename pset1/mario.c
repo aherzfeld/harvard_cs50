@@ -5,9 +5,10 @@
 int main(void)
 {
     //prompt user for number(n) between 0 and 23
+    int n;
     do
     {
-        int n = get_int("Number: ");
+        n = get_int("Number: ");
     }
     while (n < 0 || n > 23);
     //print out the height of the pyramid
@@ -16,16 +17,17 @@ int main(void)
     }
     //print out pyramid with height n
     //number of rows
-    for (int i = 0; i < n; i++)
+    int i, j, k;
+    for (i = 0; i < n; i++)
     {
-        for (int j = 0; j < (n - 2 - i); j++)
+        for (j = 0; j < (n - 2 - i); j++)
         {
-            printf(' ');
+            printf(" ");
         }
-        for (int k = 0; k < (2 + i); k++)
+        for (k = 0; k < (2 + i); k++)
         { 
-            printf('#');
+            printf("#");
         }    
-        printf('\n');
+        printf("\n");
     }
 }
