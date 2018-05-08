@@ -15,9 +15,17 @@ int main(void)
         printf("Height: %i\n", n);
     }
     //print out pyramid with height n
+    //number of rows
     for (int i = 0; i < n; i++)
     {
-        printf(' ' * (n - 2 - i));
-        printf('#' * (2 + i) + '\n');
+        for (int j = 0; j < (n - 2 - i); j++)
+        {
+            printf(' ');
+        }
+        for (int k = 0; k < (2 + i); k++)
+        { 
+            printf('#');
+        }    
+        printf('\n');
     }
 }
