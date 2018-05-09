@@ -8,10 +8,10 @@ int main(void)
 {
     float c;
     //prompt user for input (non-negative)
-    do 
+    do
     {
-        c = get_float("Change owed: ");    
-    } 
+        c = get_float("Change owed: ");
+    }
     while (c < 0);
     
     //convert float to int for calculation
@@ -21,7 +21,7 @@ int main(void)
         change_owed = (int) c;
     }
     //algorithm to determine minimum coins required
-    
+
     int quarters = 0, dimes = 0, nickles = 0, pennies = 0;
     if (change_owed >= 25)
     {
@@ -44,6 +44,6 @@ int main(void)
     }
     //print the minimum number of coins required
     {
-    printf("%i\n", quarters + dimes + nickles + pennies);
+        printf("%i\n", quarters + dimes + nickles + pennies);
     }
 }
