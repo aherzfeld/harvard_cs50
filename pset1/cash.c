@@ -43,6 +43,6 @@ int main(void)
     }
     //print the minimum number of coins required
     {
-    printf("%i + %i + %i + %i\n", quarters, dimes, nickles, pennies);
+    printf("%i\n", quarters + dimes + nickles + pennies);
     }
 }
