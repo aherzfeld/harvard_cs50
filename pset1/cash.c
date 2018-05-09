@@ -36,4 +36,7 @@ int main(void)
         pennies = change_owed / 0.01;
     }
     //print the minimum number of coins required
+    {
     printf(quarters + dimes + nickles + pennies);
+    }
+}
