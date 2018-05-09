@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <cs50.h>
+#include <math.h>
 
 int main(void)
 {
@@ -16,7 +17,7 @@ int main(void)
     //convert float to int for calculation
     int change_owed;
     {
-        c = c * 100;
+        c = roundf(c * 100);
         change_owed = (int) c;
     }
     //algorithm to determine minimum coins required
