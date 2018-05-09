@@ -21,7 +21,7 @@ int main(void)
     }
     //algorithm to determine minimum coins required
     
-    int quarters, dimes, nickles, pennies;
+    int quarters = 0, dimes = 0, nickles = 0, pennies = 0;
     if (change_owed > 25)
     {
         quarters = change_owed / 25;
@@ -43,6 +43,6 @@ int main(void)
     }
     //print the minimum number of coins required
     {
-    printf(quarters + dimes + nickles + pennies);
+    printf("%i + %i + %i + %i\n", quarters, dimes, nickles, pennies);
     }
 }
