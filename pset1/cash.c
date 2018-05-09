@@ -27,17 +27,17 @@ int main(void)
         quarters = change_owed / 25;
         change_owed = change_owed % 25;
     }
-    else if (change_owed >= 10)
+    if (change_owed >= 10)
     {
         dimes = change_owed / 10;
         change_owed = change_owed % 10;
     }
-    else if (change_owed >= 5)
+    if (change_owed >= 5)
     {
         nickles = change_owed / 5;
         change_owed = change_owed % 5;
     }
-    else
+    if (change_owed >= 1)
     {
         pennies = change_owed / 1;
     }
