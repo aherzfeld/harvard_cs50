@@ -11,6 +11,7 @@ int main(int argc, string argv[])
 {
     string p;
     int k;
+    int cipher_text[strlen(p)];
     //error if one command-line argument not passed
     if (argc != 2)
     {
@@ -24,7 +25,16 @@ int main(int argc, string argv[])
     //assign command-line arg to k and convert to int 
         int k = atoi(argv[1]);
         
-    //       
+    //encrypt plaintext to ciphertext
+        cipher_text = cipher_string(p);
+    
+    //print output cipher_text
+        printf("Ciphertext: ");
+        for (i = 0, i < strlen(p); i++)
+        {
+            printf("cipher_text[i]");
+        }
+        printf("\n");
     } 
 }    
 
@@ -72,7 +82,7 @@ int encrypt_alpha(int c, int k, bool upper)
 int cipher_string(string s)
 {
     //array to hold cipher_chars
-    int cipher_string[lenstr(s)];
+    int cipher_string[strlen(s)];
     
     for (i = 0, i < lenstr(s); i++)
     {
@@ -85,6 +95,6 @@ int cipher_string(string s)
             cipher_string[i] = encrypt_alpha(s[i], k, isupper(s[i]))
         }
     }
-    
+    //returns an array with int values for the ciphered chars
     return cipher_string;
 }    
