@@ -28,7 +28,7 @@ int main(int argc, string argv[])
     printf("Ciphertext: ");
     for (int i = 0; i < strlen(p); i++)
     {
-        printf("%c", cipher_chars(p[i], k);
+        printf("%c", cipher_chars(p[i], k));
     }
     printf("\n"); 
 }    
@@ -74,16 +74,16 @@ int encrypt_alpha(int c, int k, bool upper)
     }
 }
 
-int cipher_chars(y, k)
+int cipher_chars(char y, int k)
 {
-    int chipher_c; 
+    int cipher_c; 
     if (isalpha(y) == false)
     {
         cipher_c = y;
     }
     else
     {
-        cipher_c = encrypt_alpha(y, k, isupper(y))
+        cipher_c = encrypt_alpha(y, k, isupper(y));
     }
     //returns ciphered char y
     return cipher_c;
