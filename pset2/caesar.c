@@ -25,7 +25,7 @@ int main(int argc, string argv[])
     k = atoi(argv[1]);
     
     //print iterative output of string w/ cipher_c
-    printf("Ciphertext: ");
+    printf("ciphertext: ");
     for (int i = 0; i < strlen(p); i++)
     {
         printf("%c", cipher_chars(p[i], k));
@@ -46,7 +46,7 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 90)
         {
             //wrap-around from A to Z
-            cipher_char = 64 + ((c + k) % 90);
+            cipher_char = 64 + ((c + k) % 26);
             return cipher_char;
         }
         else
@@ -62,7 +62,7 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 122)
         {
             //wrap-around from z to a
-            cipher_char = 96 + ((c + k) % 122);
+            cipher_char = 96 + ((c + k) % 26);
             return cipher_char;
         }
         else 
