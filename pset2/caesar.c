@@ -6,37 +6,31 @@
 #include <string.h>
 
 int encrypt_alpha(int c, int k, bool upper);
-int cipher_string(string s);
+int cipher_chars(char y, int k);
 
 int main(int argc, string argv[])
 {
     string p;
     int k;
-    int cipher_text[strlen(p)];
     //error if one command-line argument not passed
     if (argc != 2)
     {
         printf("One argument expected\n");
-        return 1
+        return 1;
     }
     //prompt user for string
-    {
-        p = get_string("Plaintext: ");
+    p = get_string("Plaintext: ");
         
     //assign command-line arg to k and convert to int 
-        k = atoi(argv[1]);
-        
-    //encrypt plaintext to ciphertext
-    //    cipher_text = cipher_string(p);
+    k = atoi(argv[1]);
     
-    //print output cipher_text
-        printf("Ciphertext: ");
-        for (int i = 0, i < strlen(p); i++)
-        {
-            printf("%c", cipher_string(p)[i]);
-        }
-        printf("\n");
-    } 
+    //print iterative output of string w/ cipher_c
+    printf("Ciphertext: ");
+    for (int i = 0; i < strlen(p); i++)
+    {
+        printf("%c", cipher_chars(p[i], k);
+    }
+    printf("\n"); 
 }    
 
 //takes as inputs: the character (int) at string[i], user input (int) k,
@@ -74,28 +68,23 @@ int encrypt_alpha(int c, int k, bool upper)
         else 
         {
             //no wrap-around
-            cipher_char = c + k
+            cipher_char = c + k;
             return cipher_char;
         }    
     }
 }
 
-int cipher_string(string s)
+int cipher_chars(y, k)
 {
-    //array to hold cipher_chars
-    int cipher_string[strlen(s)];
-    
-    for (int i = 0, i < lenstr(s); i++)
+    int chipher_c; 
+    if (isalpha(y) == false)
     {
-        if (isalpha(s[i]) == false)
-        {
-            cipher_string[i] = s[i];
-        }
-        else
-        {
-            cipher_string[i] = encrypt_alpha(s[i], k, isupper(s[i]))
-        }
+        cipher_c = y;
     }
-    //returns an array with int values for the ciphered chars
-    return cipher_string;
+    else
+    {
+        cipher_c = encrypt_alpha(y, k, isupper(y))
+    }
+    //returns ciphered char y
+    return cipher_c;
 }    
