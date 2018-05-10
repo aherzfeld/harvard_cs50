@@ -4,10 +4,13 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int encrypt(c, k, upper);
+int encrypt_alpha(int c, int k, bool upper);
+int cipher_string(string s);
 
 int main(int argc, string argv[])
 {
+    string p;
+    int k;
     //error if one command-line argument not passed
     if (argc != 2)
     {
@@ -20,15 +23,18 @@ int main(int argc, string argv[])
         
     //assign command-line arg to k and convert to int 
         int k = atoi(argv[1]);
-           
+        
+    //       
     } 
 }    
 
 //takes as inputs: the character (int) at string[i], user input (int) k,
 //and a boolean answer to isupper()
 //returns cipher_char (int) 
-int encrypt(c, k, upper);
+int encrypt_alpha(int c, int k, bool upper)
 {
+    int cipher_char;
+    
     if (upper == true)
     {
         //uppercase letters
@@ -62,4 +68,23 @@ int encrypt(c, k, upper);
         }    
     }
 }
+
+int cipher_string(string s)
+{
+    //array to hold cipher_chars
+    int cipher_string[lenstr(s)];
     
+    for (i = 0, i < lenstr(s); i++)
+    {
+        if (isalpha(s[i]) == false)
+        {
+            cipher_string[i] = s[i];
+        }
+        else
+        {
+            cipher_string[i] = encrypt_alpha(s[i], k, isupper(s[i]))
+        }
+    }
+    
+    return cipher_string;
+}    
