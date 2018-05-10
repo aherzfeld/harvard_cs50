@@ -3,6 +3,7 @@
 #include <cs50.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 int encrypt_alpha(int c, int k, bool upper);
 int cipher_string(string s);
@@ -32,7 +33,7 @@ int main(int argc, string argv[])
         printf("Ciphertext: ");
         for (i = 0, i < strlen(p); i++)
         {
-            printf("cipher_text[i]");
+            printf("%c", cipher_text[i]);
         }
         printf("\n");
     } 
