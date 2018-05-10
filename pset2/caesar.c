@@ -46,7 +46,7 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 90)
         {
             //wrap-around from A to Z
-            cipher_char = 64 + (90 % (c + k));
+            cipher_char = 64 + ((c + k) % 90);
             return cipher_char;
         }
         else
@@ -62,7 +62,7 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 122)
         {
             //wrap-around from z to a
-            cipher_char = 96 + (122 % (c + k));
+            cipher_char = 96 + ((c + k) % 122);
             return cipher_char;
         }
         else 
