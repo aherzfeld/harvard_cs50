@@ -21,19 +21,19 @@ int main(int argc, string argv[])
     }
     //prompt user for string
     {
-        string p = get_string("Plaintext: ");
+        p = get_string("Plaintext: ");
         
     //assign command-line arg to k and convert to int 
-        int k = atoi(argv[1]);
+        k = atoi(argv[1]);
         
     //encrypt plaintext to ciphertext
-        cipher_text = cipher_string(p);
+    //    cipher_text = cipher_string(p);
     
     //print output cipher_text
         printf("Ciphertext: ");
-        for (i = 0, i < strlen(p); i++)
+        for (int i = 0, i < strlen(p); i++)
         {
-            printf("%c", cipher_text[i]);
+            printf("%c", cipher_string(p)[i]);
         }
         printf("\n");
     } 
@@ -69,7 +69,7 @@ int encrypt_alpha(int c, int k, bool upper)
         {
             //wrap-around from z to a
             cipher_char = 96 + (122 % (c + k));
-            return cipher_char    
+            return cipher_char;
         }
         else 
         {
@@ -85,7 +85,7 @@ int cipher_string(string s)
     //array to hold cipher_chars
     int cipher_string[strlen(s)];
     
-    for (i = 0, i < lenstr(s); i++)
+    for (int i = 0, i < lenstr(s); i++)
     {
         if (isalpha(s[i]) == false)
         {
