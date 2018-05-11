@@ -1,4 +1,4 @@
-//caesar's cipher
+//vigenere's cipher
 #include <stdio.h>
 #include <cs50.h>
 #include <stdlib.h>
@@ -34,7 +34,7 @@ int main(int argc, string argv[])
     for (int e = 0; e < key_len; e++)
     {
         //convert chars to ints
-        key[e] = atoi(key_phrase[e]);
+        key[e] = (key_phrase[e]);
         //convert ints to vigenere's keys
         if (isupper(key[e]) == true)
         {
@@ -48,16 +48,10 @@ int main(int argc, string argv[])
     
     //print iterative output of string w/ cipher_c
     printf("ciphertext: ");
-    for (int i = 0; i < strlen(p); i++)
+    for (int i = 0, j = 0; i < strlen(p); i++, j++)
     {
-        if (i > key_len)
-        {
-            k = key[key_len % i];
-        }
-        else
-        {
-            k = key[i];
-        }
+        k = key[key_len % j];
+        
         printf("%c", cipher_chars(p[i], k));
     }
     printf("\n"); 
