@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     int key_len = strlen(argv[1]);
     string key_phrase = argv[1];
     //error if one command-line argument not passed
-    if (argc != 2)
+    if (argc != 2 || argv[1] == "")
     {
         printf("One argument expected\n");
         return 1;
@@ -26,7 +26,7 @@ int main(int argc, string argv[])
     else
     {
         //check that key isalpha
-        for (n = 0; n < key_len; n++)
+        for (int n = 0; n < key_len; n++)
         {
             if (isalpha(key_phrase[n]) == false)
             {
@@ -45,7 +45,7 @@ int main(int argc, string argv[])
     for (int e = 0; e < key_len; e++)
     {
         //convert chars to ints
-        key[e] = (key_phrase[e]);
+        key[e] = key_phrase[e];
         //convert ints to vigenere's keys
         if (isupper(key[e]) == true)
         {
@@ -77,7 +77,7 @@ int encrypt_alpha(int c, int k, bool upper)
     
     if (upper == true)
     {
-        //wrap-around from A to Z
+        //wrap-around from Z to A
         c -= UPPER;
         cipher_char = (c + k) % ALPHABET;
         cipher_char += UPPER;
