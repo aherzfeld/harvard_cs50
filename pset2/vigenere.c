@@ -29,11 +29,12 @@ int main(int argc, string argv[])
     //iterate through chars in string argv[1] to fill key array
     key_len = strlen(argv[1]);
     int key[key_len];
+    string key_phrase = argv[1];
     
     for (int e = 0; e < key_len; e++)
     {
         //convert chars to ints
-        key[e] = atoi(argv[1][e]);
+        key[e] = atoi(key_phrase[e]);
         //convert ints to vigenere's keys
         if (isupper(key[e]) == true)
         {
