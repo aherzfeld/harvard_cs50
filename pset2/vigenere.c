@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#define LOWER 97
+#define UPPER 65
+#define ALPHABET 26
 
 int encrypt_alpha(int c, int k, bool upper);
 int cipher_chars(char y, int k);
@@ -34,11 +37,11 @@ int main(int argc, string argv[])
         //convert ints to vigenere's keys
         if (isupper(key[e]) == true)
         {
-            key[e] -= 65;
+            key[e] -= UPPER;
         }
         else 
         {
-            key[e] -= 97;        
+            key[e] -= LOWER;        
         }
     }
     
@@ -46,6 +49,14 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     for (int i = 0; i < strlen(p); i++)
     {
+        if (i > key_len)
+        {
+            k = key[key_len % i];
+        }
+        else
+        {
+            k = key[i];
+        }
         printf("%c", cipher_chars(p[i], k));
     }
     printf("\n"); 
@@ -64,9 +75,9 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 90)
         {
             //wrap-around from A to Z
-            c -= 65;
-            cipher_char = (c + k) % 26;
-            cipher_char += 65;
+            c -= UPPER;
+            cipher_char = (c + k) % ALPHABET;
+            cipher_char += UPPER;
             return cipher_char;
         }
         else
@@ -82,9 +93,9 @@ int encrypt_alpha(int c, int k, bool upper)
         if (k + c > 122)
         {
             //wrap-around from z to a
-            c -= 97;
-            cipher_char = (c + k) % 26;
-            cipher_char += 97;
+            c -= LOWER;
+            cipher_char = (c + k) % ALPHABET;
+            cipher_char += LOWER;
             return cipher_char;
         }
         else 
