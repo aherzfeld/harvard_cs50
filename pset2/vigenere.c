@@ -15,21 +15,32 @@ int main(int argc, string argv[])
 {
     string p;
     int k;
-    int key_len;
+    int key_len = strlen(argv[1]);
+    string key_phrase = argv[1];
     //error if one command-line argument not passed
     if (argc != 2)
     {
         printf("One argument expected\n");
         return 1;
     }
+    else
+    {
+        //check that key isalpha
+        for (n = 0; n < key_len; n++)
+        {
+            if (isalpha(key_phrase[n]) == false)
+            {
+                printf("Invalid key. Alpha characters only.");
+                return 1;
+            }  
+        }
+    }
     //prompt user for string
     p = get_string("Plaintext: ");
         
     //assign command-line arg to k and convert to int 
     //iterate through chars in string argv[1] to fill key array
-    key_len = strlen(argv[1]);
     int key[key_len];
-    string key_phrase = argv[1];
     
     for (int e = 0; e < key_len; e++)
     {
@@ -50,7 +61,7 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     for (int i = 0, j = 0; i < strlen(p); i++, j++)
     {
-        k = key[key_len % j];
+        k = key[j % key_len];
         
         printf("%c", cipher_chars(p[i], k));
     }
