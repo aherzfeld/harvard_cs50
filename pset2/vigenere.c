@@ -77,39 +77,19 @@ int encrypt_alpha(int c, int k, bool upper)
     
     if (upper == true)
     {
-        //uppercase letters
-        if (k + c > 90)
-        {
-            //wrap-around from A to Z
-            c -= UPPER;
-            cipher_char = (c + k) % ALPHABET;
-            cipher_char += UPPER;
-            return cipher_char;
-        }
-        else
-        {
-            //no wrap-around
-            cipher_char = c + k;
-            return cipher_char;
-        }
+        //wrap-around from A to Z
+        c -= UPPER;
+        cipher_char = (c + k) % ALPHABET;
+        cipher_char += UPPER;
+        return cipher_char;
     }
     else
     {   
-        //lowercase letters 
-        if (k + c > 122)
-        {
-            //wrap-around from z to a
-            c -= LOWER;
-            cipher_char = (c + k) % ALPHABET;
-            cipher_char += LOWER;
-            return cipher_char;
-        }
-        else 
-        {
-            //no wrap-around
-            cipher_char = c + k;
-            return cipher_char;
-        }    
+        //wrap-around from z to a
+        c -= LOWER;
+        cipher_char = (c + k) % ALPHABET;
+        cipher_char += LOWER;
+        return cipher_char;
     }
 }
 
